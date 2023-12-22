@@ -8,4 +8,5 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v3
     - run: npm install -g @stoplight/spectral-cli
-    - run: spectral lint rfq-api-v1.yml
+    - run: npm install --save -D @stoplight/spectral-owasp-ruleset
+    - run: spectral lint -r .owasp-spectral.yaml rfq-api-v1.yml -D error
